@@ -1,0 +1,1152 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>MYTHIC 15★ CHALLENGE | MLBB Community Esports Event</title>
+<!-- Favicon placeholder with star emblem -->
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f59e0b'&gt;&lt;path d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/&gt;&lt;/svg&gt;" rel="icon">
+<!-- Google Fonts: Inter & Rajdhani for esports aesthetic -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Rajdhani:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with forms and container-queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Rajdhani', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              dark: '#070b13',
+              obsidian: '#0b0f19',
+              navy: '#0f172a',
+              card: 'rgba(15, 23, 42, 0.75)',
+              border: '#1e293b',
+              gold: '#f59e0b',
+              goldLight: '#fde047',
+              cyan: '#38bdf8',
+            }
+          },
+          boxShadow: {
+            'glow-gold': '0 0 25px -5px rgba(245, 158, 11, 0.3)',
+            'glow-cyan': '0 0 25px -5px rgba(56, 189, 248, 0.25)',
+          }
+        }
+      }
+    };
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="typography">
+    .font-heading {
+      font-family: 'Rajdhani', sans-serif;
+      letter-spacing: 0.05em;
+    }
+  </style>
+<style data-purpose="visual-effects">
+    /* Glassmorphic card styling */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(245, 158, 11, 0.15);
+      transition: all 0.3s ease-in-out;
+    }
+    .glass-card:hover {
+      border-color: rgba(245, 158, 11, 0.45);
+      box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.2);
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cyan-gradient-text {
+      background: linear-gradient(135deg, #bae6fd 0%, #38bdf8 50%, #0284c7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    /* Accordion styling */
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    details[open] summary .accordion-icon {
+      transform: rotate(180deg);
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-gold selection:text-black min-h-screen pb-20 md:pb-0">
+<!-- Configurable target links setup for maintenance -->
+<!-- 
+    Team Registration Target: YOUR_GOOGLE_FORM_URL
+    Full Rulebook PDF Target: YOUR_RULEBOOK_PDF_URL
+  -->
+<!-- BEGIN: Sticky Navigation -->
+<header class="sticky top-0 z-50 w-full bg-brand-obsidian/90 backdrop-blur-md border-b border-slate-800/80">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16 sm:h-20">
+<!-- Logo / Brand Identifier -->
+<a class="flex items-center gap-2 group" data-purpose="brand-logo" href="#hero">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-glow-gold">
+<svg class="w-5 h-5 text-slate-950 fill-current" viewBox="0 0 24 24">
+<path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8 2.4-7.2-6-4.8h7.6z"></path>
+</svg>
+</div>
+<div>
+<span class="font-heading font-extrabold text-xl tracking-wider text-white block leading-none">
+              MLBB <span class="text-brand-gold">CHALLENGE</span>
+</span>
+<span class="text-[10px] tracking-widest text-slate-400 uppercase">Mythic 15★</span>
+</div>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center space-x-7" data-purpose="desktop-nav">
+<a class="text-sm font-medium text-slate-300 hover:text-brand-gold transition-colors" href="#challenge">Challenge</a>
+<a class="text-sm font-medium text-slate-300 hover:text-brand-gold transition-colors" href="#formats">Formats</a>
+<a class="text-sm font-medium text-slate-300 hover:text-brand-gold transition-colors" href="#rewards">Rewards</a>
+<a class="text-sm font-medium text-slate-300 hover:text-brand-gold transition-colors" href="#rules">Rules</a>
+<a class="text-sm font-medium text-slate-300 hover:text-brand-gold transition-colors" href="#fairplay">Fair Play</a>
+<a class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-bold uppercase tracking-wider text-slate-950 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 transition-all shadow-md shadow-amber-500/20 active:scale-95" href="https://forms.gle/E2WpEorwWHVpe8eg9" rel="noopener noreferrer" target="_blank">
+            Register
+          </a>
+</nav>
+<!-- Mobile Hamburger Toggle Button -->
+<div class="flex items-center md:hidden">
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="text-slate-400 hover:text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" id="mobile-menu-btn" type="button">
+<svg class="w-6 h-6" fill="none" id="menu-icon-open" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<svg class="w-6 h-6 hidden" fill="none" id="menu-icon-close" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile Dropdown Menu -->
+<div class="hidden md:hidden border-b border-slate-800 bg-brand-obsidian/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3" id="mobile-menu">
+<a class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800/80 hover:text-brand-gold" href="#challenge">The Challenge</a>
+<a class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800/80 hover:text-brand-gold" href="#formats">Formats</a>
+<a class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800/80 hover:text-brand-gold" href="#rewards">Rewards</a>
+<a class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800/80 hover:text-brand-gold" href="#rules">Important Rules</a>
+<a class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800/80 hover:text-brand-gold" href="#fairplay">Fair Play</a>
+<div class="pt-2">
+<a class="w-full inline-flex items-center justify-center py-3 rounded-lg text-sm font-bold uppercase tracking-wider text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 shadow-md" href="https://forms.gle/E2WpEorwWHVpe8eg9" rel="noopener noreferrer" target="_blank">
+          Register Your Team Now
+        </a>
+</div>
+</div>
+</header>
+<!-- END: Sticky Navigation -->
+<main>
+<!-- BEGIN: Hero Section -->
+<section class="relative pt-6 pb-16 md:pt-10 md:pb-24 overflow-hidden border-b border-slate-800/60" data-purpose="hero-section" id="hero">
+<!-- Background subtle atmospheric gradients -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-amber-500/10 via-sky-500/5 to-transparent blur-3xl pointer-events-none -z-10"></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Tournament Graphic Banner with Cinematic Fade -->
+<div class="relative w-full rounded-2xl overflow-hidden mb-8 md:mb-12 border border-slate-800 shadow-2xl group">
+<img alt="Epic Mobile Legends Bang Bang inspired ranked esports tournament banner, dark cosmic fantasy battlefield background with glowing gold and neon blue energy sparks, Mythic stars emblem aesthetic, sleek cinematic lighting, competitive gaming banner, 4k high quality, dramatic atmosphere, space for esports title" class="w-full h-auto object-cover max-h-[480px] select-none" loading="eager" src="./assets/banner.jpg">
+<!-- Gradient overlay for smooth transition into content -->
+<div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 flex flex-wrap items-center justify-between gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase bg-black/70 backdrop-blur-md border border-amber-500/30 text-brand-gold">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              Registration Open
+            </span>
+<span class="text-xs font-medium tracking-wide text-slate-300 bg-slate-900/80 backdrop-blur-sm px-3 py-1 rounded-md border border-slate-700/60">
+              Personal MLBB Ranked Climb
+            </span>
+</div>
+</div>
+<!-- Hero Content Center Container -->
+<div class="text-center max-w-3xl mx-auto">
+<!-- Format Badges -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-xs sm:text-sm font-semibold text-slate-300 mb-5">
+<span class="text-brand-cyan">SOLO</span>
+<span class="text-slate-600">•</span>
+<span class="text-brand-gold">TRIO</span>
+<span class="text-slate-600">•</span>
+<span class="text-purple-400">5-MAN</span>
+</div>
+<!-- Main Challenge Title -->
+<h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight text-white mb-3">
+            MYTHIC <span class="gold-gradient-text">15★</span> CHALLENGE
+          </h1>
+<!-- Subtitle -->
+<p class="text-base sm:text-xl text-slate-300 font-medium mb-8 max-w-xl mx-auto leading-relaxed">
+            Climb together. Compete fairly. Reach Mythic 15★.
+          </p>
+<!-- Quick Reward Highlights -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto mb-9 text-left">
+<!-- Team Reward Highlight -->
+<div class="glass-card p-4 rounded-xl border border-amber-500/30 bg-gradient-to-br from-slate-900/90 to-amber-950/20 flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/40 flex items-center justify-center shrink-0">
+<span class="text-xl">🏆</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-amber-400 uppercase tracking-wider">Milestone Payout</p>
+<p class="font-heading text-2xl font-bold text-white">₹500 <span class="text-sm font-sans font-normal text-slate-300">Team Reward</span></p>
+</div>
+</div>
+<!-- MVP Champion Highlight -->
+<div class="glass-card p-4 rounded-xl border border-sky-500/30 bg-gradient-to-br from-slate-900/90 to-sky-950/20 flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-sky-500/10 border border-sky-500/40 flex items-center justify-center shrink-0">
+<span class="text-xl">👑</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-brand-cyan uppercase tracking-wider">Top Performer</p>
+<p class="font-heading text-2xl font-bold text-white">₹300 <span class="text-sm font-sans font-normal text-slate-300">MVP Champion</span></p>
+</div>
+</div>
+</div>
+<!-- Hero Action CTAs -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl font-heading font-bold text-lg uppercase tracking-wider text-slate-950 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 shadow-glow-gold hover:scale-105 active:scale-95 transition-all" href="https://forms.gle/E2WpEorwWHVpe8eg9" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+              Register Your Team
+            </a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-xl font-heading font-semibold text-base uppercase tracking-wider text-slate-300 hover:text-white bg-slate-900/90 border border-slate-700 hover:border-slate-500 hover:bg-slate-800 transition-all" href="./assets/MLBB_Mythic_15_Challenge_Final_Rules.pdf" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 mr-2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              View Rules
+            </a>
+</div>
+<!-- Organizer Credit -->
+<p class="mt-6 text-xs text-slate-400 tracking-wider uppercase font-medium">
+            Powered by <span class="text-slate-200 font-semibold">Rohan Btr</span>
+</p>
+</div>
+</div>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: Dual Countdown & Season Tracker Section -->
+<section class="py-10 md:py-14 border-b border-slate-800/80 relative overflow-hidden bg-brand-obsidian/60" data-purpose="dual-countdown-section" id="countdown">
+<!-- Subtle ambient glow background -->
+<div class="absolute inset-0 bg-radial from-amber-500/5 via-transparent to-transparent pointer-events-none"></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<!-- Responsive 2-Column Grid for Season 42 Timer & Challenge Deadline -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+<!-- CARD 1: MLBB Season 42 Countdown (Live Timer) -->
+<div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between border-amber-500/40 shadow-glow-gold relative overflow-hidden" id="s42-card">
+<!-- Top Indicator Pill -->
+<div class="flex items-center justify-between gap-2 mb-4">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-amber-500/10 text-brand-gold border border-amber-500/30">
+<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        MLBB Ranked Season
+      </div>
+<span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Patch Transition</span>
+</div>
+<!-- State A: Season 42 Counting Down -->
+<div id="s42-state-counting">
+<div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-gold mb-1">
+<span class="text-base">⏳</span>
+<span class="">SEASON 42 STARTS SOON</span>
+</div>
+<h3 class="font-heading text-2xl sm:text-3xl font-black uppercase tracking-tight text-white mb-2">
+        SEASON 42 <span class="gold-gradient-text">COUNTDOWN</span>
+</h3>
+<p class="text-slate-300 text-xs sm:text-sm mb-5 leading-relaxed">
+        Season 42 begins after the Season 41 reset and maintenance.
+      </p>
+<!-- 4 Compact Countdown Digit Boxes -->
+<div class="grid grid-cols-4 gap-2 sm:gap-3 mb-5">
+<!-- Days -->
+<div class="bg-slate-900/90 border border-amber-500/30 rounded-xl p-2.5 sm:p-3 text-center shadow-inner">
+<span class="block font-heading font-black text-2xl sm:text-4xl text-brand-gold leading-none tracking-tight" id="s42-days">00</span>
+<span class="block text-[10px] sm:text-xs font-bold tracking-widest text-slate-400 uppercase mt-1">Days</span>
+</div>
+<!-- Hours -->
+<div class="bg-slate-900/90 border border-amber-500/30 rounded-xl p-2.5 sm:p-3 text-center shadow-inner">
+<span class="block font-heading font-black text-2xl sm:text-4xl text-brand-gold leading-none tracking-tight" id="s42-hours">00</span>
+<span class="block text-[10px] sm:text-xs font-bold tracking-widest text-slate-400 uppercase mt-1">Hours</span>
+</div>
+<!-- Minutes -->
+<div class="bg-slate-900/90 border border-amber-500/30 rounded-xl p-2.5 sm:p-3 text-center shadow-inner">
+<span class="block font-heading font-black text-2xl sm:text-4xl text-brand-gold leading-none tracking-tight" id="s42-minutes">00</span>
+<span class="block text-[10px] sm:text-xs font-bold tracking-widest text-slate-400 uppercase mt-1">Minutes</span>
+</div>
+<!-- Seconds -->
+<div class="bg-slate-900/90 border border-amber-500/30 rounded-xl p-2.5 sm:p-3 text-center shadow-inner">
+<span class="block font-heading font-black text-2xl sm:text-4xl text-amber-300 leading-none tracking-tight" id="s42-seconds">00</span>
+<span class="block text-[10px] sm:text-xs font-bold tracking-widest text-slate-400 uppercase mt-1">Seconds</span>
+</div>
+</div>
+</div>
+<!-- State B: Season 42 Is Live -->
+<div class="hidden py-4 text-center" id="s42-state-live">
+<div class="text-4xl sm:text-5xl mb-3 animate-bounce">🔥</div>
+<h3 class="font-heading text-2xl sm:text-4xl font-black uppercase tracking-tight text-white mb-2">
+        SEASON 42 IS <span class="gold-gradient-text">LIVE</span>
+</h3>
+<p class="text-slate-300 text-sm sm:text-base max-w-sm mx-auto leading-relaxed mb-4">
+        Check MLBB for Ranked availability and begin your challenge.
+      </p>
+<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        Ranked Queue Open
+      </span>
+</div>
+<!-- Season 42 Maintenance Subtlety Note -->
+<div class="pt-3 border-t border-slate-800/80 text-[11px] sm:text-xs text-slate-400 leading-relaxed">
+<span class="text-brand-gold font-semibold">Note:</span> The timer represents the season transition window (08:00 UTC / 1:30 PM IST). Ranked queue opens after official server maintenance concludes.
+    </div>
+</div>
+<!-- CARD 2: Future Challenge Deadline (Configurable Target) -->
+<div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between border-sky-500/30 shadow-glow-cyan relative overflow-hidden" id="deadline-card">
+<!-- Top Indicator Pill -->
+<div class="flex items-center justify-between gap-2 mb-4">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-sky-500/10 text-brand-cyan border border-sky-500/30">
+<span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+        Challenge Target
+      </div>
+<span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Mythic 15★</span>
+</div>
+<!-- Sub-State 1: Deadline Not Yet Announced (Default) -->
+<div class="py-3 sm:py-4 text-center my-auto" id="deadline-state-pending">
+<div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-2xl mb-3 shadow-inner">
+        🏆
+      </div>
+<div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-brand-cyan mb-1.5">
+        CHALLENGE DEADLINE
+      </div>
+<h3 class="font-heading text-2xl sm:text-3xl font-black uppercase tracking-tight text-white mb-2">
+        TO BE ANNOUNCED
+      </h3>
+<p class="text-slate-300 text-xs sm:text-sm max-w-sm mx-auto leading-relaxed">
+        Official season ending deadline will be announced once confirmed by Moonton. Form your roster and stay ready.
+      </p>
+</div>
+<!-- Sub-State 2: Active Challenge Deadline Countdown (Shown if date populated) -->
+<div class="hidden" id="deadline-state-active">
+<div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-cyan mb-1">
+<span class="text-base">⏳</span>
+<span class="">FINAL SUBMISSION DEADLINE</span>
+</div>
+<h3 class="font-heading text-2xl sm:text-3xl font-black uppercase tracking-tight text-white mb-2">
+        TIME <span class="cyan-gradient-text">REMAINING</span>
+</h3>
+<p class="text-slate-300 text-xs sm:text-sm mb-5 leading-relaxed">
+        Reach Mythic 15★ and submit verification before this target window closes.
+      </p>
+<!-- 4 Deadline Boxes -->
+<div class="grid grid-cols-4 gap-2 sm:gap-3 mb-5">
+<div class="bg-slate-900/90 border border-sky-500/30 rounded-xl p-2.5 sm:p-3 text-center shadow-inner">
+<span class="block font-heading font-black text-2xl sm:text-4xl text-brand-cyan leading-none tracking-tight" id="dl-days">00</span>
+<span class="block text-[10px] sm:text-xs font-bold tracking-widest text-slate-400 uppercase mt-1">Days</span>
+</div>
+<div class="bg-slate-900/90 border border-sky-500/30 rounded-xl p-2.5 sm:p-3 text-center shadow-inner">
+<span class="block font-heading font-black text-2xl sm:text-4xl text-brand-cyan leading-none tracking-tight" id="dl-hours">00</span>
+<span class="block text-[10px] sm:text-xs font-bold tracking-widest text-slate-400 uppercase mt-1">Hours</span>
+</div>
+<div class="bg-slate-900/90 border border-sky-500/30 rounded-xl p-2.5 sm:p-3 text-center shadow-inner">
+<span class="block font-heading font-black text-2xl sm:text-4xl text-brand-cyan leading-none tracking-tight" id="dl-minutes">00</span>
+<span class="block text-[10px] sm:text-xs font-bold tracking-widest text-slate-400 uppercase mt-1">Minutes</span>
+</div>
+<div class="bg-slate-900/90 border border-sky-500/30 rounded-xl p-2.5 sm:p-3 text-center shadow-inner">
+<span class="block font-heading font-black text-2xl sm:text-4xl text-sky-300 leading-none tracking-tight" id="dl-seconds">00</span>
+<span class="block text-[10px] sm:text-xs font-bold tracking-widest text-slate-400 uppercase mt-1">Seconds</span>
+</div>
+</div>
+</div>
+<!-- Sub-State 3: Challenge Expired / Closed -->
+<div class="hidden py-4 text-center my-auto" id="deadline-state-expired">
+<div class="text-4xl sm:text-5xl mb-3">🏁</div>
+<h3 class="font-heading text-2xl sm:text-4xl font-black uppercase tracking-tight text-white mb-2">
+        CHALLENGE CLOSED
+      </h3>
+<p class="text-slate-300 text-sm sm:text-base max-w-sm mx-auto leading-relaxed">
+        The challenge deadline has passed.
+      </p>
+</div>
+<!-- Deadline Bottom Footnote -->
+<div class="pt-3 border-t border-slate-800/80 text-[11px] sm:text-xs text-slate-400 flex items-center justify-between">
+<span class="">Milestone: <strong class="text-slate-300 font-semibold">15 Stars Target</strong></span>
+<span class="text-brand-cyan font-medium">₹800 Prize Pool</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Dual Countdown & Season Tracker Section -->
+<!-- BEGIN: The Challenge Section -->
+<section class="py-16 md:py-20 border-b border-slate-800/80 bg-slate-950/40" data-purpose="the-challenge" id="challenge">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<h2 class="font-heading text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mb-3">
+            The <span class="gold-gradient-text">Challenge</span>
+</h2>
+<p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+            Form your team, start from the new season, and race to Mythic 15★ or higher before the challenge deadline.
+          </p>
+</div>
+<!-- 3 Step Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Step 1 -->
+<div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+<span class="font-heading text-6xl font-black text-slate-800/60 absolute -right-2 -bottom-2 group-hover:text-amber-500/10 transition-colors">01</span>
+<div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 text-brand-gold flex items-center justify-center font-heading font-bold mb-4">
+              01
+            </div>
+<h3 class="font-heading text-xl font-bold uppercase text-white mb-2">Choose Your Format</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+              Lock in your competitive roster style: enter as Solo, lock arms as a Trio, or assemble a full 5-Man squad.
+            </p>
+</div>
+<!-- Step 2 -->
+<div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+<span class="font-heading text-6xl font-black text-slate-800/60 absolute -right-2 -bottom-2 group-hover:text-sky-500/10 transition-colors">02</span>
+<div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/30 text-brand-cyan flex items-center justify-center font-heading font-bold mb-4">
+              02
+            </div>
+<h3 class="font-heading text-xl font-bold uppercase text-white mb-2">Climb The Rank</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+              Begin from the fresh season reset. Play strictly in Ranked mode with assigned roles and zero roster modifications.
+            </p>
+</div>
+<!-- Step 3 -->
+<div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+<span class="font-heading text-6xl font-black text-slate-800/60 absolute -right-2 -bottom-2 group-hover:text-emerald-500/10 transition-colors">03</span>
+<div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-heading font-bold mb-4">
+              03
+            </div>
+<h3 class="font-heading text-xl font-bold uppercase text-white mb-2">Win The Reward</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+              Touch Mythic 15★ to unlock the cash pool. Collect the highest winning MVP count to claim the Champion crown.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: The Challenge Section -->
+<!-- BEGIN: Choose Your Format Section -->
+<section class="py-16 md:py-24 border-b border-slate-800/80" data-purpose="format-selection" id="formats">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<div class="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2">
+            Squad Formats
+          </div>
+<h2 class="font-heading text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mb-3">
+            Choose Your <span class="gold-gradient-text">Format</span>
+</h2>
+<p class="text-slate-400 text-sm sm:text-base">
+            Select how you will tackle the climb. Roles and rosters are verified upon registration.
+          </p>
+</div>
+<!-- Formats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<!-- SOLO CARD -->
+<div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-slate-800 hover:border-slate-700">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="px-2.5 py-1 rounded text-xs font-bold uppercase tracking-wider bg-slate-800 text-slate-300 border border-slate-700">Solo Queue</span>
+<span class="text-xs font-semibold text-slate-400">1 Player</span>
+</div>
+<h3 class="font-heading text-2xl font-extrabold uppercase text-white mb-3">SOLO</h3>
+<ul class="space-y-3 text-sm text-slate-300 mb-6">
+<li class="flex items-start gap-2">
+<svg class="w-4 h-4 text-brand-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+<span class=""><strong>1 Registered Challenger</strong></span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="w-4 h-4 text-brand-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+<span class="">Public matchmaking teammates allowed</span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="w-4 h-4 text-brand-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+<span class="">Selects <strong>1 Primary Role</strong> + <strong>1 Backup Role</strong> at registration</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-slate-800/80 text-xs text-slate-400 font-medium">
+              Ultimate lone-wolf test of versatility.
+            </div>
+</div>
+<!-- TRIO CARD (Highlighted) -->
+<div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-amber-500/40 relative shadow-glow-gold bg-gradient-to-b from-slate-900/90 to-amber-950/10">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2">
+<span class="px-3 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-brand-gold text-slate-950 shadow">
+                Popular Choice
+              </span>
+</div>
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="px-2.5 py-1 rounded-xs font-bold uppercase tracking-wider bg-amber-500/20 text-brand-gold border border-amber-500/30">Trio Queue</span>
+<span class="text-xs font-semibold text-amber-300">3 Players</span>
+</div>
+<h3 class="font-heading text-2xl font-extrabold uppercase text-white mb-3">TRIO</h3>
+<ul class="space-y-3 text-sm text-slate-300 mb-6">
+<li class="flex items-start gap-2">
+<svg class="w-4 h-4 text-brand-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+<span class=""><strong>3 Fixed Players</strong> must queue together</span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="w-4 h-4 text-brand-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+<span class="">Every registered player plays their <strong>Primary Role only</strong></span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="w-4 h-4 text-red-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+<span class=""><strong>No substitutions</strong> allowed after the first match</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-amber-500/20 text-xs text-amber-300/80 font-medium">
+              High synergy, strategic coordination.
+            </div>
+</div>
+<!-- 5-MAN CARD -->
+<div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-slate-800 hover:border-slate-700">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="px-2.5 py-1 rounded text-xs font-bold uppercase tracking-wider bg-slate-800 text-slate-300 border border-slate-700">Full Squad</span>
+<span class="text-xs font-semibold text-slate-400">5 Players</span>
+</div>
+<h3 class="font-heading text-2xl font-extrabold uppercase text-white mb-3">5-MAN</h3>
+<ul class="space-y-3 text-sm text-slate-300 mb-6">
+<li class="flex items-start gap-2">
+<svg class="w-4 h-4 text-brand-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+<span class=""><strong>5 Fixed Players</strong> full squad roster</span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="w-4 h-4 text-brand-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+<span class="">Each player locks a <strong>dedicated role</strong> (Gold, Mid, Exp, Roam, Jungle)</span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="w-4 h-4 text-red-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+<span class=""><strong>Strictly no substitutions</strong> once registered</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-slate-800/80 text-xs text-slate-400 font-medium">
+              Pure esports squad warfare.
+            </div>
+</div>
+</div>
+<!-- Format Permanent Lock Notice Banner -->
+<div class="bg-amber-950/20 border border-amber-500/40 rounded-xl p-4 sm:p-5 flex items-center gap-3.5 max-w-3xl mx-auto shadow-sm">
+<div class="text-brand-gold shrink-0">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<p class="text-xs sm:text-sm text-slate-200 leading-snug">
+<strong class="text-brand-gold uppercase tracking-wide">Format Lock Notice:</strong> Your selected format and registered player roster are <span class="underline decoration-amber-500 underline-offset-2">permanently locked</span> once your first Ranked match begins.
+          </p>
+</div>
+</div>
+</section>
+<!-- END: Choose Your Format Section -->
+<!-- BEGIN: Rewards Section -->
+<section class="py-16 md:py-24 border-b border-slate-800/80 bg-slate-950/60" data-purpose="reward-breakdown" id="rewards">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2 block">Prizes &amp; Bounties</span>
+<h2 class="font-heading text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-white mb-3">
+            Challenge <span class="gold-gradient-text">Rewards</span>
+</h2>
+<p class="text-slate-400 text-sm sm:text-base">
+            Compete for the glory and take home cash rewards upon reaching the target rank.
+          </p>
+</div>
+<!-- Total Payout Banner -->
+<div class="max-w-md mx-auto mb-10 text-center">
+<div class="glass-card py-3 px-6 rounded-full inline-flex items-center gap-3 border border-amber-500/40">
+<span class="text-xs font-bold uppercase tracking-widest text-slate-300">Total Event Payout:</span>
+<span class="font-heading text-2xl font-black text-brand-gold">₹800 INR</span>
+</div>
+</div>
+<!-- 2 Main Rewards Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<!-- Team Reward Card -->
+<div class="glass-card rounded-2xl p-7 sm:p-9 border border-amber-500/30 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-3xl">🏅</span>
+<span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/10 text-brand-gold border border-amber-500/30">Target Goal</span>
+</div>
+<h3 class="font-heading text-3xl font-extrabold uppercase text-white mb-1">Team Reward</h3>
+<p class="text-slate-400 text-xs sm:text-sm uppercase tracking-wider mb-6">Rank Milestone Achievement</p>
+<div class="mb-6">
+<span class="font-heading text-5xl font-extrabold text-brand-gold">₹500</span>
+<span class="text-slate-400 text-sm ml-1">/ squad payout</span>
+</div>
+<div class="space-y-3 text-sm text-slate-300">
+<p class="flex items-center gap-2">
+<svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="">Granted upon successfully reaching <strong>Mythic 15★ or higher</strong>.</span>
+</p>
+<p class="flex items-center gap-2">
+<svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="">Distributed directly to the registered team leader.</span>
+</p>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t border-slate-800 text-xs text-slate-400">
+              Valid for Solo, Trio, and 5-Man formats upon verified climb.
+            </div>
+</div>
+<!-- MVP Champion Card -->
+<div class="glass-card rounded-2xl p-7 sm:p-9 border border-sky-500/30 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-3xl">👑</span>
+<span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-sky-500/10 text-brand-cyan border border-sky-500/30">Player Of The Climb</span>
+</div>
+<h3 class="font-heading text-3xl font-extrabold uppercase text-white mb-1">MVP Champion</h3>
+<p class="text-slate-400 text-xs sm:text-sm uppercase tracking-wider mb-6">Individual Excellence</p>
+<div class="mb-6">
+<span class="font-heading text-5xl font-extrabold text-brand-cyan">₹300</span>
+<span class="text-slate-400 text-sm ml-1">/ champion payout</span>
+</div>
+<div class="space-y-3 text-sm text-slate-300">
+<p class="flex items-start gap-2">
+<svg class="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="">Awarded to the player with the <strong>highest number of Winning-Team MVPs</strong>.</span>
+</p>
+<div class="p-3 bg-red-950/20 border border-red-500/30 rounded-lg text-xs text-red-300 font-medium">
+                  ⚠️ <strong>Critical Rule:</strong> Only Winning-Team MVP titles count toward this reward. Losing-Team MVP (defeat) does NOT count under any circumstance.
+                </div>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t border-slate-800 text-xs text-slate-400">
+              Tie-breaker will be decided by the highest total match win rate.
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Rewards Section -->
+<!-- BEGIN: How It Works Section -->
+<section class="py-16 md:py-24 border-b border-slate-800/80" data-purpose="how-it-works-timeline">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-xl mx-auto mb-14">
+<h2 class="font-heading text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mb-3">
+            How It <span class="cyan-gradient-text">Works</span>
+</h2>
+<p class="text-slate-400 text-sm sm:text-base">
+            Four simple steps from enrollment to the cash reward table.
+          </p>
+</div>
+<!-- Vertical Connected Steps -->
+<div class="relative border-l-2 border-slate-800 ml-4 sm:ml-32 space-y-10">
+<!-- Step Item 1 -->
+<div class="relative pl-8 sm:pl-10 group">
+<span class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-brand-gold flex items-center justify-center font-heading font-bold text-xs text-brand-gold">
+              01
+            </span>
+<div class="sm:absolute sm:-left-32 sm:top-2 text-xs font-bold uppercase tracking-wider text-slate-400 hidden sm:block text-right w-24">
+              Phase 1
+            </div>
+<div>
+<h3 class="font-heading text-xl font-bold uppercase text-white mb-1">01 REGISTER</h3>
+<p class="text-sm text-slate-400 leading-relaxed">
+                Fill out the official Google Form before playing your first match of the season. Submit your in-game UID, squad format, and dedicated role(s).
+              </p>
+</div>
+</div>
+<!-- Step Item 2 -->
+<div class="relative pl-8 sm:pl-10 group">
+<span class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-brand-cyan flex items-center justify-center font-heading font-bold text-xs text-brand-cyan">
+              02
+            </span>
+<div class="sm:absolute sm:-left-32 sm:top-2 text-xs font-bold uppercase tracking-wider text-slate-400 hidden sm:block text-right w-24">
+              Phase 2
+            </div>
+<div>
+<h3 class="font-heading text-xl font-bold uppercase text-white mb-1">02 START FRESH</h3>
+<p class="text-sm text-slate-400 leading-relaxed">
+                The challenge begins strictly upon the opening bell of the new MLBB ranked season. Your starting tier will be noted from your season reset history.
+              </p>
+</div>
+</div>
+<!-- Step Item 3 -->
+<div class="relative pl-8 sm:pl-10 group">
+<span class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-purple-400 flex items-center justify-center font-heading font-bold text-xs text-purple-400">
+              03
+            </span>
+<div class="sm:absolute sm:-left-32 sm:top-2 text-xs font-bold uppercase tracking-wider text-slate-400 hidden sm:block text-right w-24">
+              Phase 3
+            </div>
+<div>
+<h3 class="font-heading text-xl font-bold uppercase text-white mb-1">03 CLIMB</h3>
+<p class="text-sm text-slate-400 leading-relaxed">
+                Play ranked matches according to your locked squad format. Maintain your designated role and preserve your post-match screenshots for verification.
+              </p>
+</div>
+</div>
+<!-- Step Item 4 -->
+<div class="relative pl-8 sm:pl-10 group">
+<span class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-900 border-2 border-emerald-400 flex items-center justify-center font-heading font-bold text-xs text-emerald-400">
+              04
+            </span>
+<div class="sm:absolute sm:-left-32 sm:top-2 text-xs font-bold uppercase tracking-wider text-slate-400 hidden sm:block text-right w-24">
+              Phase 4
+            </div>
+<div>
+<h3 class="font-heading text-xl font-bold uppercase text-white mb-1">04 REACH MYTHIC 15★</h3>
+<p class="text-sm text-slate-400 leading-relaxed">
+                Reach Mythic 15★ or beyond before the challenge timer runs out. Submit your final stat screenshot to claim the ₹500 team prize and ₹300 MVP bounty.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: How It Works Section -->
+<!-- BEGIN: Important Rules Section -->
+<section class="py-16 md:py-24 border-b border-slate-800/80 bg-slate-950/40" data-purpose="rulebook-accordions" id="rules">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-2 block">Regulations</span>
+<h2 class="font-heading text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-white mb-3">
+            Important <span class="gold-gradient-text">Rules</span>
+</h2>
+<p class="text-slate-400 text-sm sm:text-base">
+            Fair play is strictly enforced. Read and review all competition terms below before entering.
+          </p>
+</div>
+<!-- 10 Detailed Rule Accordions -->
+<div class="space-y-3 mb-10">
+<!-- Rule 1 -->
+<details class="glass-card rounded-xl overflow-hidden group">
+<summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none select-none font-semibold text-slate-200 hover:text-white">
+<span class="flex items-center gap-3">
+<span class="text-xs font-mono text-brand-gold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">RULE 01</span>
+<span class="">Mandatory Prior Registration</span>
+</span>
+<svg class="accordion-icon w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</summary>
+<div class="px-5 pb-5 text-sm text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+              Teams and solo participants must register through the official registration form before their first ranked game of the new season. Matches played before confirmed registration will not count toward challenge milestones.
+            </div>
+</details>
+<!-- Rule 2 -->
+<details class="glass-card rounded-xl overflow-hidden group">
+<summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none select-none font-semibold text-slate-200 hover:text-white">
+<span class="flex items-center gap-3">
+<span class="text-xs font-mono text-brand-gold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">RULE 02</span>
+<span class="">Permanent Format Lock</span>
+</span>
+<svg class="accordion-icon w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</summary>
+<div class="px-5 pb-5 text-sm text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+              Once registered in Solo, Trio, or 5-Man format, switching formats mid-season is completely prohibited. If you register as a Trio, all ranked matches must be queued strictly as that registered Trio.
+            </div>
+</details>
+<!-- Rule 3 -->
+<details class="glass-card rounded-xl overflow-hidden group">
+<summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none select-none font-semibold text-slate-200 hover:text-white">
+<span class="flex items-center gap-3">
+<span class="text-xs font-mono text-brand-gold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">RULE 03</span>
+<span class="">Strict Fixed Roster &amp; No Substitutions</span>
+</span>
+<svg class="accordion-icon w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</summary>
+<div class="px-5 pb-5 text-sm text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+              For Trio and 5-Man formats, the registered player roster cannot be changed after match 1. No standby players or substitutions are permitted. If one member cannot continue, the squad forfeits their progress.
+            </div>
+</details>
+<!-- Rule 4 -->
+<details class="glass-card rounded-xl overflow-hidden group">
+<summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none select-none font-semibold text-slate-200 hover:text-white">
+<span class="flex items-center gap-3">
+<span class="text-xs font-mono text-brand-gold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">RULE 04</span>
+<span class="">Role Assignment Adherence</span>
+</span>
+<svg class="accordion-icon w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</summary>
+<div class="px-5 pb-5 text-sm text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+              In Trio and 5-Man, players must stick to their registered primary role (Roamer, Mid, Jungle, Gold, Exp). In Solo, players can flex between their declared Primary and Backup roles when requested by draft lobbies.
+            </div>
+</details>
+<!-- Rule 5 -->
+<details class="glass-card rounded-xl overflow-hidden group">
+<summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none select-none font-semibold text-slate-200 hover:text-white">
+<span class="flex items-center gap-3">
+<span class="text-xs font-mono text-brand-gold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">RULE 05</span>
+<span class="">Target Milestone: Mythic 15 Stars</span>
+</span>
+<svg class="accordion-icon w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</summary>
+<div class="px-5 pb-5 text-sm text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+              The ₹500 team prize is unlocked only after reaching Mythic rank with a minimum of 15 stars earned (Mythic 15★) during the active event window. Reaching Mythic 0★ without 15 stars does not qualify.
+            </div>
+</details>
+<!-- Rule 6 -->
+<details class="glass-card rounded-xl overflow-hidden group">
+<summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none select-none font-semibold text-slate-200 hover:text-white">
+<span class="flex items-center gap-3">
+<span class="text-xs font-mono text-brand-gold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">RULE 06</span>
+<span class="">MVP Evaluation (Winning Team Only)</span>
+</span>
+<svg class="accordion-icon w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</summary>
+<div class="px-5 pb-5 text-sm text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+              The ₹300 MVP Champion award is calculated strictly using official Winning-Team MVP accolades. Losing-Team MVP (defeat) medals will be deducted or disregarded during total tally count.
+            </div>
+</details>
+<!-- Rule 7 -->
+<details class="glass-card rounded-xl overflow-hidden group">
+<summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none select-none font-semibold text-slate-200 hover:text-white">
+<span class="flex items-center gap-3">
+<span class="text-xs font-mono text-brand-gold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">RULE 07</span>
+<span class="">Zero Account Sharing &amp; Piloting</span>
+</span>
+<svg class="accordion-icon w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</summary>
+<div class="px-5 pb-5 text-sm text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+              Every challenger must pilot their own personal account. If suspicious device ID changes, IP jumps, or unnatural hero pool shifts are detected, the entire squad is disqualified immediately.
+            </div>
+</details>
+<!-- Rule 8 -->
+<details class="glass-card rounded-xl overflow-hidden group">
+<summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none select-none font-semibold text-slate-200 hover:text-white">
+<span class="flex items-center gap-3">
+<span class="text-xs font-mono text-brand-gold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">RULE 08</span>
+<span class="">Match Verification &amp; History Transparency</span>
+</span>
+<svg class="accordion-icon w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</summary>
+<div class="px-5 pb-5 text-sm text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+              In-game match history must remain set to 'Public' for the entirety of the challenge. Organizers reserve the right to audit replay files or match records at any checkpoint.
+            </div>
+</details>
+<!-- Rule 9 -->
+<details class="glass-card rounded-xl overflow-hidden group">
+<summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none select-none font-semibold text-slate-200 hover:text-white">
+<span class="flex items-center gap-3">
+<span class="text-xs font-mono text-brand-gold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">RULE 09</span>
+<span class="">Sportsmanship &amp; Code of Conduct</span>
+</span>
+<svg class="accordion-icon w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</summary>
+<div class="px-5 pb-5 text-sm text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+              Deliberate feeding, win-trading, match fixing, toxic harassment towards fellow challengers or in public lobbies will cause forfeiture with no appeal.
+            </div>
+</details>
+<!-- Rule 10 -->
+<details class="glass-card rounded-xl overflow-hidden group">
+<summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none select-none font-semibold text-slate-200 hover:text-white">
+<span class="flex items-center gap-3">
+<span class="text-xs font-mono text-brand-gold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">RULE 10</span>
+<span class="">Organizer Final Authority</span>
+</span>
+<svg class="accordion-icon w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</summary>
+<div class="px-5 pb-5 text-sm text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+              In any unforeseen situation, tie-breakers, game client discrepancies, or rule interpretations, the decision of Rohan Btr is final and binding for all participants.
+            </div>
+</details>
+</div>
+<!-- Rulebook Download CTA -->
+<div class="text-center">
+<a class="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold uppercase tracking-wider text-slate-300 hover:text-white bg-slate-900 border border-slate-700 hover:border-amber-500/50 transition-colors" href="./assets/MLBB_Mythic_15_Challenge_Final_Rules.pdf" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 mr-2 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            Read Full Official Rulebook (PDF)
+          </a>
+</div>
+</div>
+</section>
+<!-- END: Important Rules Section -->
+<!-- BEGIN: Fair Play Section -->
+<section class="py-16 md:py-20 border-b border-slate-800/80" data-purpose="fair-play-values" id="fairplay">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="w-12 h-12 mx-auto rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-brand-gold mb-4">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="font-heading text-2xl sm:text-4xl font-black uppercase tracking-tight text-white mb-3">
+          FAIR PLAY &amp; INTEGRITY
+        </h2>
+<p class="text-base sm:text-lg text-slate-300 font-medium max-w-xl mx-auto mb-8">
+          Skill matters. Consistency matters. Teamwork matters.
+        </p>
+<!-- Values Badges / Pills -->
+<div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 max-w-2xl mx-auto">
+<span class="px-4 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase bg-slate-900/90 border border-slate-700/80 text-amber-300">
+            SKILL
+          </span>
+<span class="px-4 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase bg-slate-900/90 border border-slate-700/80 text-sky-300">
+            CONSISTENCY
+          </span>
+<span class="px-4 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase bg-slate-900/90 border border-slate-700/80 text-emerald-300">
+            ADAPTABILITY
+          </span>
+<span class="px-4 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase bg-slate-900/90 border border-slate-700/80 text-purple-300">
+            TEAMWORK
+          </span>
+<span class="px-4 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase bg-slate-900/90 border border-slate-700/80 text-amber-400">
+            FAIR COMPETITION
+          </span>
+</div>
+</div>
+</section>
+<!-- END: Fair Play Section -->
+<!-- BEGIN: Final Registration CTA Section -->
+<section class="py-20 md:py-28 relative overflow-hidden" data-purpose="final-cta">
+<!-- Ambient Glow Behind CTA -->
+<div class="absolute inset-0 bg-radial from-amber-500/10 via-transparent to-transparent pointer-events-none"></div>
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+<span class="inline-block text-xs font-extrabold uppercase tracking-widest text-brand-gold bg-amber-500/10 border border-amber-500/30 px-3.5 py-1 rounded-full mb-4">
+          Seasonal Window
+        </span>
+<h2 class="font-heading text-4xl sm:text-6xl font-black uppercase tracking-tight text-white mb-4">
+          READY TO <span class="gold-gradient-text">CLIMB?</span>
+</h2>
+<p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto mb-8 leading-relaxed">
+          Register your team before the first Ranked match of the new season. Lock in your squad, conquer the ladder, and take the reward.
+        </p>
+<!-- Big Touch-Friendly Button -->
+<div class="max-w-md mx-auto">
+<a class="w-full inline-flex items-center justify-center px-8 py-5 rounded-2xl font-heading font-extrabold text-xl uppercase tracking-wider text-slate-950 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 shadow-glow-gold hover:scale-105 active:scale-95 transition-all" href="https://forms.gle/E2WpEorwWHVpe8eg9" rel="noopener noreferrer" target="_blank">
+            REGISTER YOUR TEAM NOW
+          </a>
+<p class="mt-4 text-xs text-slate-400">
+            Free entry • Google Form verification takes under 2 minutes
+          </p>
+</div>
+</div>
+</section>
+<!-- END: Final Registration CTA Section -->
+</main>
+<!-- BEGIN: Footer -->
+<footer class="border-t border-slate-800/80 bg-brand-obsidian py-12" data-purpose="main-footer">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="flex items-center justify-center gap-2 mb-3">
+<div class="w-6 h-6 rounded bg-amber-500 flex items-center justify-center text-slate-950 text-xs font-bold">
+          ★
+        </div>
+<span class="font-heading font-bold text-lg uppercase tracking-wider text-white">
+          MLBB MYTHIC 15★ CHALLENGE
+        </span>
+</div>
+<p class="text-xs sm:text-sm text-slate-400 mb-4 max-w-md mx-auto">
+        Private community challenge • Fair competition • Team-based ranked climb
+      </p>
+<div class="text-xs text-slate-400 flex items-center justify-center gap-2">
+<span class="">Powered by <strong class="text-slate-300">Rohan Btr</strong></span>
+<span class="">•</span>
+<span class="">Mobile Legends: Bang Bang Community</span>
+</div>
+<p class="text-[11px] text-slate-400 mt-6">
+        Disclaimer: This is a private enthusiast challenge. Not officially affiliated with or sponsored by MOONTON or Mobile Legends: Bang Bang.
+      </p>
+</div>
+</footer>
+<!-- END: Footer -->
+<!-- BEGIN: Mobile Sticky Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-40 p-3 bg-brand-obsidian/95 backdrop-blur-lg border-t border-slate-800 md:hidden" data-purpose="mobile-sticky-cta">
+<div class="flex items-center gap-3">
+<a class="px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-xs font-bold uppercase tracking-wider text-slate-300 text-center shrink-0" href="./assets/MLBB_Mythic_15_Challenge_Final_Rules.pdf" rel="noopener noreferrer" target="_blank">
+        Rules
+      </a>
+<a class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-heading font-extrabold text-base uppercase tracking-wider text-center shadow-lg shadow-amber-500/20 active:scale-95 transition-transform" href="https://forms.gle/E2WpEorwWHVpe8eg9" rel="noopener noreferrer" target="_blank">
+        Register Team
+      </a>
+</div>
+</div>
+<!-- END: Mobile Sticky Bottom Action Bar -->
+<!-- BEGIN: Scripts -->
+<script data-purpose="countdown-and-navigation">
+// ============================================================================
+// 1. MLBB SEASON 42 RESET CONFIGURATION
+// India Standard Time (UTC+05:30)
+// ============================================================================
+const SEASON_42_RESET = "2026-09-16T13:30:00+05:30";
+
+// ============================================================================
+// 2. FUTURE CHALLENGE DEADLINE CONFIGURATION
+// Set to ISO timestamp when confirmed (e.g. "2026-12-16T23:59:59+05:30"),
+// or keep null / "SET_DEADLINE_HERE" for "TO BE ANNOUNCED"
+// ============================================================================
+const CHALLENGE_DEADLINE = null;
+
+// Helper: pad with leading zero
+function padZero(num) {
+  return num < 10 ? '0' + num : String(num);
+}
+
+// ----------------------------------------------------------------------------
+// TIMER ENGINE 1: MLBB SEASON 42 COUNTDOWN
+// ----------------------------------------------------------------------------
+(function initSeason42Timer() {
+  const stateCounting = document.getElementById('s42-state-counting');
+  const stateLive = document.getElementById('s42-state-live');
+
+  const elDays = document.getElementById('s42-days');
+  const elHours = document.getElementById('s42-hours');
+  const elMinutes = document.getElementById('s42-minutes');
+  const elSeconds = document.getElementById('s42-seconds');
+
+  if (!SEASON_42_RESET || isNaN(Date.parse(SEASON_42_RESET))) {
+    return;
+  }
+
+  const targetTime = new Date(SEASON_42_RESET).getTime();
+
+  function updateS42Timer() {
+    const now = Date.now();
+    const diff = targetTime - now;
+
+    if (diff <= 0) {
+      // Season 42 is LIVE
+      if (stateCounting) stateCounting.classList.add('hidden');
+      if (stateLive) stateLive.classList.remove('hidden');
+      return true; // Complete
+    }
+
+    // Counting down
+    if (stateCounting) stateCounting.classList.remove('hidden');
+    if (stateLive) stateLive.classList.add('hidden');
+
+    const totalSec = Math.floor(diff / 1000);
+    const days = Math.floor(totalSec / 86400);
+    const hours = Math.floor((totalSec % 86400) / 3600);
+    const minutes = Math.floor((totalSec % 3600) / 60);
+    const seconds = totalSec % 60;
+
+    if (elDays) elDays.textContent = padZero(days);
+    if (elHours) elHours.textContent = padZero(hours);
+    if (elMinutes) elMinutes.textContent = padZero(minutes);
+    if (elSeconds) elSeconds.textContent = padZero(seconds);
+
+    return false;
+  }
+
+  const isFinished = updateS42Timer();
+  if (!isFinished) {
+    const s42Interval = setInterval(function() {
+      if (updateS42Timer()) {
+        clearInterval(s42Interval);
+      }
+    }, 1000);
+  }
+})();
+
+// ----------------------------------------------------------------------------
+// TIMER ENGINE 2: FUTURE CHALLENGE DEADLINE
+// ----------------------------------------------------------------------------
+(function initChallengeDeadlineTimer() {
+  const statePending = document.getElementById('deadline-state-pending');
+  const stateActive = document.getElementById('deadline-state-active');
+  const stateExpired = document.getElementById('deadline-state-expired');
+
+  const dlDays = document.getElementById('dl-days');
+  const dlHours = document.getElementById('dl-hours');
+  const dlMinutes = document.getElementById('dl-minutes');
+  const dlSeconds = document.getElementById('dl-seconds');
+
+  // Check if deadline is not set / null / TBA placeholder
+  if (!CHALLENGE_DEADLINE || CHALLENGE_DEADLINE === 'SET_DEADLINE_HERE' || isNaN(Date.parse(CHALLENGE_DEADLINE))) {
+    if (statePending) statePending.classList.remove('hidden');
+    if (stateActive) stateActive.classList.add('hidden');
+    if (stateExpired) stateExpired.classList.add('hidden');
+    return;
+  }
+
+  const deadlineTime = new Date(CHALLENGE_DEADLINE).getTime();
+
+  function updateDeadlineTimer() {
+    const now = Date.now();
+    const diff = deadlineTime - now;
+
+    if (diff <= 0) {
+      // Challenge closed / expired
+      if (statePending) statePending.classList.add('hidden');
+      if (stateActive) stateActive.classList.add('hidden');
+      if (stateExpired) stateExpired.classList.remove('hidden');
+      return true;
+    }
+
+    // Active deadline countdown
+    if (statePending) statePending.classList.add('hidden');
+    if (stateActive) stateActive.classList.remove('hidden');
+    if (stateExpired) stateExpired.classList.add('hidden');
+
+    const totalSec = Math.floor(diff / 1000);
+    const days = Math.floor(totalSec / 86400);
+    const hours = Math.floor((totalSec % 86400) / 3600);
+    const minutes = Math.floor((totalSec % 3600) / 60);
+    const seconds = totalSec % 60;
+
+    if (dlDays) dlDays.textContent = padZero(days);
+    if (dlHours) dlHours.textContent = padZero(hours);
+    if (dlMinutes) dlMinutes.textContent = padZero(minutes);
+    if (dlSeconds) dlSeconds.textContent = padZero(seconds);
+
+    return false;
+  }
+
+  const isComplete = updateDeadlineTimer();
+  if (!isComplete) {
+    const dlInterval = setInterval(function() {
+      if (updateDeadlineTimer()) {
+        clearInterval(dlInterval);
+      }
+    }, 1000);
+  }
+})();
+
+// Mobile hamburger menu toggle handler
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const iconOpen = document.getElementById('menu-icon-open');
+const iconClose = document.getElementById('menu-icon-close');
+const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+if (menuBtn && mobileMenu) {
+  function toggleMenu() {
+    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', !isExpanded);
+    mobileMenu.classList.toggle('hidden');
+    if (iconOpen) iconOpen.classList.toggle('hidden');
+    if (iconClose) iconClose.classList.toggle('hidden');
+  }
+
+  menuBtn.addEventListener('click', toggleMenu);
+
+  // Auto-close dropdown when a link is clicked
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (!mobileMenu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+  });
+}
+</script>
+<!-- END: Scripts -->
+
+
+</body></html>
